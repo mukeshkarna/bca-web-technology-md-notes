@@ -191,6 +191,28 @@ You can link multiple stylesheets:
 </head>
 ```
 
+## 🎯 Mini Task 1: CSS Basics - Three Ways to Style
+
+**Task:** Create a single HTML page demonstrating all three CSS approaches:
+
+1. Create a page about "My Favorite Books" with:
+   - A heading (h1) styled with **inline CSS**: red color, center alignment
+   - A paragraph describing your favorite genre styled with **internal CSS**: blue color, justified text
+   - At least 3 book cards (divs) styled with **external CSS**: borders, padding, background colors
+
+2. Create an external file named `book-styles.css` with:
+   - Container styling (width, margin, padding)
+   - Card styling (borders, shadows, hover effects)
+   - Typography settings (font-family, font-size, line-height)
+
+3. Test the cascade by:
+   - Applying the same property using all three methods to one element
+   - Observing which style wins (inline > internal > external)
+
+**Expected Outcome:** A page demonstrating CSS priority and all three styling methods clearly.
+
+---
+
 ### Setting up Style Information
 
 #### CSS Syntax
@@ -540,6 +562,34 @@ CSS3 was divided into smaller modules that could evolve independently:
     }
     ```
 
+## 🎯 Mini Task 2: Working with CSS Selectors
+
+**Task:** Create a styled blog post page using different types of selectors:
+
+1. **Element Selectors:**
+   - Style all `<p>` tags with a specific font and line-height
+   - Style all `<h2>` tags with a bottom border
+
+2. **Class Selectors:**
+   - Create a `.highlight` class for important text
+   - Create a `.card` class for content boxes
+   - Create a `.button` class for styled links
+
+3. **ID Selectors:**
+   - Style `#header` with specific background and text color
+   - Style `#footer` differently from header
+
+4. **Advanced Selectors:**
+   - Use descendant selector to style `article p` differently than other paragraphs
+   - Use child selector for direct children (e.g., `nav > ul > li`)
+   - Use attribute selector for `input[type="email"]`
+   - Use pseudo-class for `a:hover` and `li:nth-child(odd)`
+   - Use pseudo-element for `p::first-line` and `p::first-letter`
+
+**Expected Outcome:** A well-styled blog post demonstrating at least 8 different types of selectors.
+
+---
+
 ### CSS Positioning
 
 Positioning allows you to control the layout of elements on the page.
@@ -635,6 +685,35 @@ The `z-index` property controls the stacking order of positioned elements:
 - Only works on positioned elements (not `position: static`)
 - Creates stacking contexts
 
+## 🎯 Mini Task 3: CSS Positioning Challenge
+
+**Task:** Create a "Photo Gallery Header" demonstrating different position types:
+
+1. **Fixed Positioning:**
+   - Create a navigation bar that stays at the top when scrolling
+   - Should have a z-index higher than other elements
+
+2. **Relative Positioning:**
+   - Create a photo card that's positioned slightly offset from its normal position
+   - Add a badge/label positioned relative to the card
+
+3. **Absolute Positioning:**
+   - Place a "NEW" badge on the top-right corner of a card (inside relative parent)
+   - Create overlay text on an image using absolute positioning
+
+4. **Sticky Positioning:**
+   - Create section headers that stick to the top when scrolling past them
+
+5. **Z-index Practice:**
+   - Layer at least 3 elements with different z-index values
+   - Create a modal/popup that appears above all content
+
+**Bonus:** Add smooth scroll behavior and test your fixed header with long content.
+
+**Expected Outcome:** A page with all position types working together, demonstrating proper use of positioning context.
+
+---
+
 ### CSS Box Model
 
 The CSS box model describes the rectangular boxes generated for elements in the document tree.
@@ -707,6 +786,36 @@ Many developers apply border-box sizing to all elements for more intuitive sizin
     box-sizing: border-box;
 }
 ```
+
+## 🎯 Mini Task 4: Mastering the Box Model
+
+**Task:** Create a "Pricing Cards" layout to practice the box model:
+
+1. **Create 3 pricing cards** (Basic, Pro, Enterprise) with:
+   - Specific width and height
+   - Padding: 20px on all sides
+   - Border: 2px solid with different colors for each
+   - Margin: 15px between cards
+   - Background colors
+
+2. **Experiment with box-sizing:**
+   - Create two versions of the same card
+   - One with `box-sizing: content-box` (default)
+   - One with `box-sizing: border-box`
+   - Compare the total width calculations
+
+3. **Add visual elements:**
+   - Box shadows for depth
+   - Border-radius for rounded corners
+   - Hover effect that changes box-shadow and transform
+
+4. **Use developer tools:**
+   - Inspect the box model in browser DevTools
+   - Take a screenshot showing the box model diagram
+
+**Expected Outcome:** Three attractive pricing cards with clear understanding of content, padding, border, and margin areas. Document the width calculations for both box-sizing values.
+
+---
 
 ### CSS3 Specifics
 
@@ -899,6 +1008,127 @@ CSS animations allow you to create more complex animations with keyframes:
         fade 2s ease-in infinite alternate;
 }
 ```
+
+## 🎯 Mini Task 5: Responsive Design with Media Queries
+
+**Task:** Create a responsive portfolio page that adapts to different screen sizes:
+
+1. **Mobile First Approach (< 600px):**
+   - Single column layout
+   - Full-width images
+   - Stacked navigation menu
+   - Font-size: 14px
+
+2. **Tablet Layout (601px - 1024px):**
+   - Two-column grid for project cards
+   - Side-by-side navigation
+   - Font-size: 16px
+   - Adjust image sizes
+
+3. **Desktop Layout (> 1024px):**
+   - Three-column grid
+   - Max-width container (1200px) centered
+   - Larger font-size: 18px
+   - Horizontal navigation
+
+4. **Print Styles:**
+   - Hide navigation and footer
+   - Black text on white background
+   - Remove background images
+   - Adjust font sizes for readability
+
+**Bonus:** Add a "landscape vs portrait" media query for tablets.
+
+**Expected Outcome:** A fully responsive page that looks good on mobile, tablet, desktop, and when printed.
+
+---
+
+## 🎯 Mini Task 6: Flexbox Layout
+
+**Task:** Create a "Dashboard Layout" using Flexbox:
+
+1. **Main Container:**
+   - Use `display: flex`
+   - Create a sidebar (20% width) and main content area (80% width)
+
+2. **Navigation Bar:**
+   - Horizontal flexbox for nav items
+   - Use `justify-content: space-between`
+   - Center items vertically with `align-items`
+
+3. **Card Grid:**
+   - Use flex-wrap to create a responsive card layout
+   - Each card should `flex: 1 1 300px` (grow, shrink, base-width)
+   - Add gap between cards using `gap` property
+
+4. **Footer:**
+   - Three sections: left-aligned logo, centered links, right-aligned social icons
+   - Use flexbox to achieve this layout
+
+**Challenge:** Make it responsive so cards stack on mobile without media queries (using flex-wrap).
+
+**Expected Outcome:** A complete dashboard layout demonstrating flex properties: direction, wrap, justify-content, align-items, flex, gap.
+
+---
+
+## 🎯 Mini Task 7: CSS Grid Layout
+
+**Task:** Create a "Magazine-Style Layout" using CSS Grid:
+
+1. **Grid Container Setup:**
+   ```
+   [Header - spanning all columns]
+   [Sidebar] [Main Article] [Main Article]
+   [Sidebar] [Image]        [Image]
+   [Footer - spanning all columns]
+   ```
+
+2. **Requirements:**
+   - Use `grid-template-columns` with 3 columns
+   - Use `grid-template-rows` with auto sizing
+   - Implement `grid-gap` for spacing
+   - Use `grid-column` and `grid-row` for spanning
+
+3. **Named Grid Areas:**
+   - Create a second version using `grid-template-areas`
+   - Name your areas: header, sidebar, content, footer
+
+4. **Responsive Behavior:**
+   - On mobile: single column layout
+   - On tablet: 2 columns
+   - On desktop: 3 columns
+
+**Expected Outcome:** A magazine-style layout showcasing grid's power for complex layouts.
+
+---
+
+## 🎯 Mini Task 8: Animations and Transitions
+
+**Task:** Create an "Interactive Button Showcase" with various effects:
+
+1. **Basic Transitions (at least 3 buttons):**
+   - Color transition on hover (0.3s ease)
+   - Size scale transition (transform: scale)
+   - Box-shadow transition
+   - Border-radius transition
+
+2. **CSS Animations (create 3):**
+   - **Pulse:** Button that pulses continuously
+   - **Slide-in:** Element that slides in from left on page load
+   - **Bounce:** Button that bounces on hover
+
+3. **Advanced Animations:**
+   - Create a loading spinner animation using `@keyframes`
+   - Create a fade-in animation for page content
+   - Multi-step animation with different states (0%, 50%, 100%)
+
+4. **Timing Functions:**
+   - Experiment with: ease, ease-in, ease-out, ease-in-out, linear
+   - Create one animation with cubic-bezier for custom timing
+
+**Expected Outcome:** A showcase page with at least 8 different animated elements demonstrating transitions and keyframe animations.
+
+---
 
 ### Introduction to HTML5 and CSS3 Integration
 
@@ -1735,3 +1965,79 @@ CSS preprocessors extend CSS with variables, nesting, mixins, functions, and mor
 8. **Create a fixed header that changes style on scroll**
 9. **Implement different types of loading animations**
 10. **Design a responsive photo gallery with CSS Grid**
+## 🎯 Mini Task 9: Comprehensive CSS Project
+
+**Project:** Build a Complete Responsive Portfolio Website
+
+This is a comprehensive project combining everything you've learned. Create a multi-page portfolio website with the following requirements:
+
+### Pages to Create:
+1. **Home Page** - Hero section, about preview, featured projects
+2. **About Page** - Bio, skills, timeline
+3. **Projects Page** - Grid of project cards
+4. **Contact Page** - Contact form with styling
+
+### CSS Requirements:
+
+**1. Layout & Responsiveness:**
+- Use CSS Grid for the main page layout
+- Use Flexbox for navigation and card layouts
+- Implement mobile-first responsive design
+- 3 breakpoints: mobile (< 600px), tablet (600-1024px), desktop (> 1024px)
+
+**2. Styling Techniques:**
+- External CSS file(s) organized by section
+- CSS variables for colors, spacing, and fonts
+- Box model properly applied to all elements
+- All five positioning types used appropriately
+
+**3. Visual Effects:**
+- Smooth transitions on hover states
+- At least 3 CSS animations (page load, scroll effects, etc.)
+- Box shadows and gradients for depth
+- Transform effects for interactive elements
+
+**4. Navigation:**
+- Fixed or sticky navigation bar
+- Hover effects on menu items
+- Active page indicator
+- Mobile hamburger menu (CSS only - using checkbox hack)
+
+**5. Typography:**
+- Proper heading hierarchy
+- Readable line-height and font-sizes
+- Custom web fonts (Google Fonts)
+- Text effects using pseudo-elements
+
+**6. Forms:**
+- Styled contact form with focus states
+- Custom checkbox and radio buttons
+- Input validation styling (using :valid/:invalid)
+- Accessible form labels
+
+**7. Best Practices:**
+- Semantic HTML5 elements
+- Proper use of selectors (avoid excessive specificity)
+- No !important declarations
+- Comments organizing CSS sections
+- Cross-browser compatibility
+
+### Bonus Challenges:
+- Dark mode toggle using CSS variables
+- Loading animation on page load
+- Parallax scrolling effect
+- Image gallery with lightbox effect
+- Print stylesheet
+
+**Expected Outcome:** A professional, fully responsive portfolio website demonstrating mastery of CSS concepts covered in this unit.
+
+**Evaluation Criteria:**
+- Visual appeal and design consistency
+- Code organization and readability
+- Proper use of CSS concepts
+- Responsive behavior
+- Accessibility and usability
+
+---
+
+**End of CSS Notes - Good luck with your projects!**
