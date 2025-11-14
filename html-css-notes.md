@@ -116,6 +116,21 @@ Example:
 </div>
 ```
 
+## 🎯 Mini Task 1: HTML Basics Practice
+
+**Task:** Create a simple HTML page about yourself with the following requirements:
+1. Use proper HTML5 document structure (DOCTYPE, html, head, body)
+2. Include a page title in the `<head>`
+3. Add at least 3 different heading levels (h1, h2, h3)
+4. Write 2-3 paragraphs about yourself using `<p>` tags
+5. Use at least 3 different text formatting tags (bold, italic, mark, etc.)
+6. Include a horizontal rule (`<hr>`) to separate sections
+7. Add comments to explain different sections of your code
+
+**Expected Outcome:** A well-structured personal profile page demonstrating basic HTML elements.
+
+---
+
 ### List Tags
 
 #### Unordered Lists
@@ -163,6 +178,22 @@ Example:
     </li>
 </ul>
 ```
+
+## 🎯 Mini Task 2: Working with Lists
+
+**Task:** Create an HTML page for a recipe with the following:
+1. Use an unordered list for ingredients
+2. Use an ordered list for cooking steps
+3. Create a nested list showing:
+   - Different meal categories (breakfast, lunch, dinner)
+   - Under each category, list 2-3 dish names
+4. Use a definition list to define at least 3 cooking terms (e.g., "Sauté", "Blanch", "Julienne")
+
+**Bonus Challenge:** Style the list markers using the `type` or `style` attributes.
+
+**Expected Outcome:** A well-organized recipe page demonstrating all three types of lists.
+
+---
 
 ### Hyperlink Tags
 
@@ -312,6 +343,21 @@ Always provide alternative text for accessibility:
 2. For each clickable area: Use the `alt` attribute in each `<area>` tag
 
 This helps users with screen readers understand the purpose of the image and its clickable regions.
+
+## 🎯 Mini Task 4: Image Gallery with Imagemap
+
+**Task:** Create an interactive image gallery:
+1. Display at least 3 images with proper `alt` text
+2. Set width and height attributes for each image
+3. Create a client-side imagemap on one image with at least 3 clickable areas (use different shapes: rectangle, circle)
+4. Each area should link to a different page or section
+5. Add a `<figure>` element with a `<figcaption>` for at least one image
+
+**Bonus Challenge:** Create one image as a server-side imagemap using the `ismap` attribute.
+
+**Expected Outcome:** An image gallery with at least one interactive imagemap.
+
+---
 
 ### Tables
 
@@ -548,6 +594,26 @@ While tables were historically used for layout, modern web design uses CSS for l
     </tr>
 </table>
 ```
+
+## 🎯 Mini Task 5: Creating Data Tables
+
+**Task:** Create a student grade report table:
+1. Create a table with the following columns: Student Name, Subject, Midterm Score, Final Score, Total
+2. Include at least 5 rows of student data
+3. Add a `<caption>` describing the table
+4. Use `<thead>`, `<tbody>`, and `<tfoot>` to structure the table
+5. In the footer, show the average scores
+6. Use `colspan` to merge cells in the header or footer
+7. Use `rowspan` for at least one cell
+8. Style the table with:
+   - Borders using inline CSS
+   - Different background colors for header and footer
+   - Padding for cells
+   - Alternating row colors using `nth-child` or inline styles
+
+**Expected Outcome:** A professional-looking data table with proper structure and styling.
+
+---
 
 ### Frames
 
@@ -990,6 +1056,33 @@ Form data can be passed using two methods:
 </form>
 ```
 
+## 🎯 Mini Task 6: Building Interactive Forms
+
+**Task:** Create a student registration form with the following fields:
+1. Text inputs: First Name, Last Name, Email
+2. Password field for creating a password
+3. Radio buttons for Gender (Male, Female, Other)
+4. Checkboxes for selecting interests (at least 4 options)
+5. Dropdown select for choosing a course/major
+6. Textarea for "Why do you want to join?"
+7. File upload for profile picture
+8. Number input for age (with min and max validation)
+9. Date input for date of birth
+10. Submit and Reset buttons
+
+**Requirements:**
+- Use `<fieldset>` and `<legend>` to group related fields
+- Add `<label>` elements for all inputs (use the `for` attribute)
+- Make at least 3 fields required
+- Use placeholder text where appropriate
+- Add a hidden field with a session ID (value: "12345")
+
+**Bonus Challenge:** Add JavaScript validation to check if email is in correct format before submission.
+
+**Expected Outcome:** A complete, well-organized registration form demonstrating various input types.
+
+---
+
 ### Style Sheets
 
 #### Definition
@@ -1060,4 +1153,37 @@ You can link multiple stylesheets:
 <head>
     <link rel="stylesheet" type="text/css" href="base.css">
     <link rel="stylesheet" type="text/css" href="layout.css">
-    <link rel="stylesheet" type="
+    <link rel="stylesheet" type="theme.css">
+</head>
+```
+
+## 🎯 Mini Task 7: CSS Styling Methods
+
+**Task:** Take the student registration form you created in Mini Task 6 and style it using all three CSS methods:
+
+1. **Create an external CSS file (styles.css):**
+   - Set body font-family and background color
+   - Style all labels with a specific color and font-weight
+   - Add margin and padding to form elements
+   - Style the submit button with colors and hover effects
+
+2. **Add internal CSS in the `<style>` tag:**
+   - Style the fieldset with border and background
+   - Add styling for input focus states
+   - Create styles for error messages (even if not displayed yet)
+
+3. **Use inline CSS for:**
+   - Making one specific heading a unique color
+   - Adding a special style to the submit button that overrides other styles
+
+4. **Additional Requirements:**
+   - Ensure the form is centered on the page
+   - Add box shadows to input fields
+   - Create a color scheme that's visually appealing
+   - Make sure text is readable with good contrast
+
+**Expected Outcome:** A beautifully styled registration form demonstrating the CSS cascade and all three methods of applying styles.
+
+---
+
+**End of HTML and CSS Notes**

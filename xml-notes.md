@@ -82,6 +82,34 @@ In this example:
    ```
 8. **White space is preserved**
 
+## 🎯 Mini Task 1: Creating Your First XML Document
+
+**Task:** Create a well-formed XML document for a "Book Library":
+
+1. **Create `library.xml` with:**
+   - XML declaration with version and encoding
+   - Root element `<library>`
+   - At least 5 `<book>` elements as children
+
+2. **Each book should have:**
+   - `id` attribute (unique identifier)
+   - `category` attribute (fiction/non-fiction/science/history)
+   - Child elements: `<title>`, `<author>`, `<year>`, `<price>`, `<publisher>`
+   - At least one book with multiple `<author>` elements
+
+3. **Include special characters:**
+   - Use entities like `&amp;`, `&lt;`, `&gt;` in at least one element
+   - Add XML comments explaining different sections
+
+4. **Validate your document:**
+   - Ensure all tags are properly closed
+   - Check that tags are properly nested
+   - Verify all attribute values are quoted
+
+**Expected Outcome:** A well-formed XML document representing a book library that follows all XML syntax rules.
+
+---
+
 ### Namespaces
 
 XML namespaces help avoid element name conflicts when combining XML documents from different vocabularies.
@@ -108,6 +136,31 @@ XML namespaces help avoid element name conflicts when combining XML documents fr
   </f:table>
 </root>
 ```
+
+## 🎯 Mini Task 2: Working with XML Namespaces
+
+**Task:** Create a document combining multiple XML vocabularies using namespaces:
+
+1. **Create `product-catalog.xml` with:**
+   - Two namespaces: one for product info, one for HTML formatting
+   - Namespace prefixes: `prod` for products, `html` for HTML elements
+
+2. **Document structure:**
+   ```xml
+   <catalog xmlns:prod="http://example.com/products"
+            xmlns:html="http://www.w3.org/1999/xhtml">
+   ```
+
+3. **Include:**
+   - At least 3 products with `prod:` prefixed elements
+   - HTML formatted descriptions using `html:` prefixed elements (p, strong, em)
+   - Show how namespaces prevent element name conflicts
+
+4. **Bonus:** Add a third namespace for pricing with currency conversions.
+
+**Expected Outcome:** An XML document demonstrating proper use of namespaces to combine different XML vocabularies.
+
+---
 
 ### XML Schema (XSD)
 
@@ -159,6 +212,36 @@ XML Schema Definition (XSD) defines the structure, content, and semantics of XML
   
 </xs:schema>
 ```
+
+## 🎯 Mini Task 3: Creating an XML Schema (XSD)
+
+**Task:** Create an XSD schema for the library.xml from Mini Task 1:
+
+1. **Create `library.xsd` with:**
+   - Proper XSD namespace declaration
+   - Root element definition for `<library>`
+   - Complex type definition for `<book>` element
+
+2. **Define constraints:**
+   - `id` attribute as required, type xs:ID
+   - `category` as enumeration (fiction, non-fiction, science, history)
+   - `year` as xs:integer with min=1000, max=current year
+   - `price` as xs:decimal with 2 decimal places
+   - `title` and `author` as required strings
+   - `publisher` as optional string
+
+3. **Advanced requirements:**
+   - Allow 1-5 authors per book (using minOccurs and maxOccurs)
+   - Create a custom simpleType for ISBN with pattern validation
+   - Add email type for author contact with pattern restriction
+
+4. **Validate:**
+   - Link your library.xml to this schema
+   - Test with valid and invalid data
+
+**Expected Outcome:** A complete XSD schema that properly validates your XML library document.
+
+---
 
 ### XSD Attributes
 
@@ -269,6 +352,32 @@ Attributes in XSD can have various properties:
 <xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 ```
 
+## 🎯 Mini Task 4: XSD Facets and Patterns
+
+**Task:** Create an XSD for a "Student Registration System" demonstrating various facets and patterns:
+
+1. **Create `student.xsd` with custom simpleTypes:**
+   - **StudentID**: Pattern like "STU[0-9]{6}" (e.g., STU123456)
+   - **Email**: Pattern for valid email format
+   - **Age**: Integer with minInclusive=16, maxInclusive=100
+   - **GPA**: Decimal with totalDigits=3, fractionDigits=2, range 0.00-4.00
+   - **PhoneNumber**: Pattern for format (XXX) XXX-XXXX
+   - **ZipCode**: Pattern for 5 or 9 digit ZIP codes
+
+2. **Create complexType for Student with:**
+   - Sequence of elements: firstName, lastName, email, age, gpa, phone
+   - Attributes: studentID (required), enrollmentYear (fixed to current year)
+   - Choice element for major (from enumerated list)
+
+3. **Use indicators:**
+   - `<xs:all>` for address elements (street, city, state, zip in any order)
+   - `<xs:choice>` for contact preference (email, phone, or mail)
+   - `<xs:sequence>` with minOccurs/maxOccurs for course enrollments (1-7 courses)
+
+**Expected Outcome:** An XSD demonstrating mastery of patterns, facets, and occurrence indicators.
+
+---
+
 ### Document Type Definition (DTD)
 
 DTD provides a way to define the structure of an XML document. It's older than XSD but still widely used.
@@ -345,6 +454,38 @@ DTD provides a way to define the structure of an XML document. It's older than X
 >
 ```
 
+## 🎯 Mini Task 5: Document Type Definition (DTD)
+
+**Task:** Create both internal and external DTDs for a "Recipe Collection":
+
+**Part 1: Internal DTD**
+1. Create `recipes-internal.xml` with embedded DTD that defines:
+   - Root element `<cookbook>`
+   - `<recipe>` elements with attributes: id, category, difficulty
+   - Child elements: `<name>`, `<prepTime>`, `<cookTime>`, `<servings>`
+   - `<ingredients>` containing multiple `<ingredient>` with amount attribute
+   - `<instructions>` containing multiple `<step>` elements
+
+**Part 2: External DTD**
+1. Create `recipes.dtd` (external file) with same definitions
+2. Create `recipes-external.xml` that references this DTD using SYSTEM
+3. Add entity definitions for common ingredients:
+   ```dtd
+   <!ENTITY salt "1 tsp salt">
+   <!ENTITY pepper "1/2 tsp black pepper">
+   ```
+
+**Part 3: DTD Features**
+- Use #PCDATA for text content
+- Use #REQUIRED and #IMPLIED for attributes
+- Use #FIXED for version attribute
+- Create enumerated attribute type for difficulty (easy|medium|hard)
+- Use (element1 | element2)* for choice elements
+
+**Expected Outcome:** Two XML files (one with internal DTD, one with external) both validating correctly.
+
+---
+
 ### XSL/XSLT
 
 XSLT (eXtensible Stylesheet Language Transformations) is used to transform XML documents into other formats like HTML, XML, text, etc.
@@ -413,6 +554,39 @@ XSLT File (books.xsl):
 - `<xsl:sort>` - Sorts the output
 - `<xsl:apply-templates>` - Applies templates to nodes
 
+## 🎯 Mini Task 6: XSLT Transformation
+
+**Task:** Transform the library.xml into an HTML page using XSLT:
+
+1. **Create `library.xsl` that transforms library.xml into HTML:**
+   - HTML page with proper structure (html, head, body)
+   - Page title: "My Book Library"
+   - CSS styling in the head section
+
+2. **XSLT Requirements:**
+   - Use `<xsl:template match="/">` for root template
+   - Create an HTML table with headers: Title, Author, Year, Price, Category
+   - Use `<xsl:for-each>` to iterate through all books
+   - Use `<xsl:value-of>` to extract element values and attributes
+   - Use `<xsl:sort>` to sort books by title
+
+3. **Advanced Features:**
+   - Use `<xsl:if>` to highlight books published after 2000 (different background color)
+   - Use `<xsl:choose>`/`<xsl:when>`/`<xsl:otherwise>` to categorize prices:
+     - Budget: < $15 (green)
+     - Medium: $15-$30 (yellow)
+     - Premium: > $30 (red)
+   - Add a total count of books using `count()`
+   - Format prices to 2 decimal places
+
+4. **Apply the transformation:**
+   - Link the XSL file in your XML
+   - Open in browser or use XSLT processor
+
+**Expected Outcome:** A styled HTML page generated from XML showing all books in a formatted table.
+
+---
+
 ### XPath
 
 XPath is a query language used to navigate through elements and attributes in an XML document. It's used by XSLT and other XML processing technologies.
@@ -440,6 +614,49 @@ XPath is a query language used to navigate through elements and attributes in an
   </ul>
 </xsl:template>
 ```
+
+## 🎯 Mini Task 7: XPath Queries
+
+**Task:** Practice XPath expressions using your library.xml:
+
+Write XPath expressions to select:
+
+1. **Basic Selection:**
+   - All book titles
+   - All authors
+   - The root element
+   - All book elements
+
+2. **Attribute Selection:**
+   - Books with category="fiction"
+   - The id attribute of all books
+   - Books where category is not "fiction"
+
+3. **Positional Selection:**
+   - The first book
+   - The last book
+   - The first 3 books
+   - Every other book (odd positions)
+
+4. **Conditional Selection:**
+   - Books published after 2010
+   - Books with price less than $20
+   - Books with price between $15 and $30
+   - Fiction books published after 2015
+
+5. **Advanced XPath:**
+   - All books by a specific author (use contains())
+   - Books with titles starting with "The"
+   - Count total number of books
+   - Sum of all book prices
+   - Average price of all books
+   - Books that have multiple authors
+
+**Testing:** Use an online XPath tester or browser console to verify each expression.
+
+**Expected Outcome:** A document listing all XPath expressions with their results and explanations.
+
+---
 
 ### XQuery
 
@@ -475,6 +692,53 @@ return
     <total-books>{$fiction_count + $nonfiction_count}</total-books>
   </summary>
 ```
+
+## 🎯 Mini Task 8: XQuery Practice
+
+**Task:** Write XQuery expressions for the library.xml:
+
+1. **Basic FLWOR Expression:**
+   ```xquery
+   for $book in doc("library.xml")//book
+   where $book/price > 20
+   order by $book/title
+   return $book/title
+   ```
+   Modify this to return complete book information as XML elements.
+
+2. **Queries to Write:**
+
+   a) **Filter and Sort:**
+   - Find all fiction books, ordered by year (newest first)
+   - Return title, author, and year in new XML structure
+
+   b) **Grouping:**
+   - Group books by category
+   - Count books in each category
+   - Return category name and count
+
+   c) **Calculations:**
+   - Calculate average price per category
+   - Find the most expensive book in each category
+   - Calculate total value of entire library
+
+   d) **Complex Query:**
+   - Create a report showing:
+     - Total number of books
+     - Number of books per category
+     - Price statistics (min, max, average)
+     - Books published in last 5 years
+
+3. **Using let:**
+   ```xquery
+   let $total := sum(doc("library.xml")//price)
+   let $count := count(doc("library.xml")//book)
+   return <average>{$total div $count}</average>
+   ```
+
+**Expected Outcome:** A collection of working XQuery expressions with their results, demonstrating FLWOR operations.
+
+---
 
 ### SAX and DOM
 
@@ -610,6 +874,53 @@ public class DOMExample {
 }
 ```
 
+## 🎯 Mini Task 9: SAX vs DOM Parser Comparison
+
+**Task:** Implement both SAX and DOM parsers for your library.xml:
+
+**Part 1: SAX Parser (Event-Based)**
+
+Create a program (Java, Python, or JavaScript) that:
+1. Parses library.xml using SAX
+2. Implements event handlers:
+   - `startElement`: Track when entering each element
+   - `endElement`: Track when leaving each element
+   - `characters`: Capture text content
+3. Extracts and prints:
+   - All book titles
+   - Count of total books
+   - All books in "fiction" category
+4. Measures memory usage and parsing time
+
+**Part 2: DOM Parser (Tree-Based)**
+
+Create a program that:
+1. Parses library.xml using DOM
+2. Loads entire document into memory as tree
+3. Navigates the tree to:
+   - Find and print all book titles
+   - Count total books
+   - Filter fiction books
+   - Modify a book's price (update XML)
+   - Add a new book element
+   - Save modified XML back to file
+4. Measures memory usage and parsing time
+
+**Part 3: Comparison Analysis**
+
+Create a comparison table:
+| Feature | SAX | DOM |
+|---------|-----|-----|
+| Memory Usage | | |
+| Parsing Speed | | |
+| Can Modify | | |
+| Can Navigate Back | | |
+| Best Use Case | | |
+
+**Expected Outcome:** Two working parsers with performance comparison showing when to use each approach.
+
+---
+
 ### Creating XML Parser
 
 Creating a custom XML parser involves understanding parsing mechanisms and implementing them according to requirements.
@@ -681,24 +992,127 @@ try {
 }
 ```
 
-## Exercises for Students
+## 🎯 Mini Task 10: Comprehensive XML Project
 
-1. **Create a valid XML document** representing a music collection with albums, artists, songs, and appropriate attributes.
+**Final Project:** Build a Complete "Student Course Management System" using XML Technologies
 
-2. **Write an XSD schema** for the music collection XML you created.
+This comprehensive project integrates all XML concepts you've learned. Create a complete system for managing students, courses, and enrollments.
 
-3. **Create a DTD** for a simple blog post system with posts, comments, and authors.
+### Project Requirements:
 
-4. **Write an XSLT transformation** to convert the music collection XML into an HTML table.
+**1. XML Data Files (Create at least 3):**
+   - `students.xml` - Student information (ID, name, email, major, enrollment year)
+   - `courses.xml` - Course catalog (code, title, credits, department, instructor)
+   - `enrollments.xml` - Student course enrollments (studentID, courseCode, semester, grade)
 
-5. **Use XPath** to extract specific information from the music collection XML (e.g., all songs by a particular artist).
+**2. XML Schema (XSD):**
+   - Create `students.xsd`, `courses.xsd`, and `enrollments.xsd`
+   - Use appropriate data types and constraints
+   - Implement patterns for: student IDs, email addresses, course codes
+   - Define value ranges for: credits (1-4), GPA (0.00-4.00), grades (A, B, C, D, F)
+   - Use occurrence indicators appropriately
 
-6. **Implement a simple SAX parser** to count the number of elements in an XML document.
+**3. DTD:**
+   - Create an alternative DTD for at least one of your XML files
+   - Include entity definitions for common values (department names, etc.)
+   - Demonstrate both internal and external DTD approaches
 
-7. **Create a DOM parser** that can modify an existing XML document (e.g., add a new song to an album).
+**4. Namespaces:**
+   - Create a combined document using namespaces
+   - Integrate student and course data in one file using different namespaces
+   - Add a third namespace for contact information
 
-8. **Write an XQuery** to find all albums released after a certain year and sort them by artist name.
+**5. XSLT Transformations (Create at least 3):**
+   a) **Student Report:** Transform students.xml to HTML
+      - Display as formatted table with styling
+      - Sort by last name
+      - Color-code by major
 
-9. **Create a namespace example** showing how to combine elements from different XML vocabularies.
+   b) **Course Catalog:** Transform courses.xml to HTML
+      - Group courses by department
+      - Show course details in cards or table
+      - Include search/filter capabilities
 
-10. **Develop a complete XML-based application** that demonstrates the use of XML, XSD, XSLT, and DOM/SAX parsing for a specific domain (e.g., library management, student records).
+   c) **Transcript:** Combine data from students.xml and enrollments.xml
+      - Generate student transcripts
+      - Calculate GPA
+      - Show courses taken per semester
+
+**6. XPath Queries (Write at least 10):**
+   - Find all Computer Science majors
+   - Get courses with 3+ credits
+   - Find students with GPA > 3.5
+   - Get all courses taught by specific instructor
+   - Find students enrolled in specific course
+   - Calculate average GPA
+   - Count students per major
+   - Find courses with no enrollments
+   - Get top 5 students by GPA
+   - Find students graduating this year
+
+**7. XQuery Expressions (Write at least 5):**
+   - Generate enrollment statistics report
+   - List courses sorted by enrollment count
+   - Create grade distribution report
+   - Find students at risk (GPA < 2.0)
+   - Generate department-wise student count
+
+**8. Parsers:**
+   **SAX Parser:**
+   - Count total number of students
+   - Extract and display all student names
+   - Calculate total credits offered
+
+   **DOM Parser:**
+   - Add new student to students.xml
+   - Enroll student in a course
+   - Update student grade
+   - Remove a course
+   - Save changes back to XML file
+
+**9. Web Interface (Optional Bonus):**
+   - Create HTML pages that use JavaScript to:
+     - Parse and display XML data
+     - Search students/courses
+     - Show enrollment statistics
+     - Validate data against XSD
+
+### Deliverables:
+
+1. **XML Files:** All data files with proper structure
+2. **Schema Files:** XSD and DTD files
+3. **XSLT Files:** All transformation stylesheets
+4. **Query Files:** XPath and XQuery expressions with results
+5. **Parser Code:** SAX and DOM parser implementations
+6. **Documentation:**
+   - Project overview
+   - Data dictionary (element descriptions)
+   - User guide for transformations
+   - Test cases and results
+7. **HTML Output:** Generated reports from XSLT
+
+### Evaluation Criteria:
+
+- **XML Well-formedness** (10%): All XML files are well-formed
+- **Schema Validation** (15%): XSD/DTD correctly validate XML
+- **XSLT Quality** (20%): Transformations produce correct, styled output
+- **Query Accuracy** (15%): XPath/XQuery return correct results
+- **Parser Implementation** (20%): Both parsers work correctly
+- **Code Quality** (10%): Clean, commented, organized code
+- **Documentation** (10%): Clear, comprehensive documentation
+
+### Bonus Challenges:
+
+- Implement CRUD operations (Create, Read, Update, Delete) via web interface
+- Add data validation using JavaScript
+- Create multiple XSLT outputs (HTML, PDF, text)
+- Implement search with autocomplete
+- Add data visualization (charts for statistics)
+- Create RESTful API to serve XML data
+- Implement XML data binding
+
+**Expected Outcome:** A fully functional course management system demonstrating mastery of all XML technologies covered in this unit.
+
+---
+
+**End of XML Notes - Best of luck with your XML projects!**
