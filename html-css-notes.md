@@ -116,6 +116,194 @@ Example:
 </div>
 ```
 
+#### Understanding `<div>` and `<span>` Elements
+
+##### The `<div>` Element (Block-level Container)
+
+The `<div>` element is a generic block-level container used to group content for styling and layout purposes. It takes up the full width available and starts on a new line.
+
+**Basic `<div>` Example:**
+```html
+<div>
+    <h2>Welcome to My Website</h2>
+    <p>This is a simple div containing content.</p>
+</div>
+```
+
+**Using `<div>` for Layout Sections:**
+```html
+<div class="header">
+    <h1>Website Title</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</div>
+
+<div class="content">
+    <div class="sidebar">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h2>Main Content Area</h2>
+        <p>This is the main content of the page.</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+</div>
+```
+
+**Using `<div>` with Inline CSS:**
+```html
+<div style="background-color: #f0f0f0; padding: 20px; margin: 10px; border: 1px solid #ccc;">
+    <h3>Styled Container</h3>
+    <p>This div has background color, padding, margin, and border.</p>
+</div>
+```
+
+**Nested `<div>` Elements:**
+```html
+<div class="card">
+    <div class="card-header">
+        <h3>Product Card</h3>
+    </div>
+    <div class="card-body">
+        <p>Product description goes here.</p>
+        <p>Price: $29.99</p>
+    </div>
+    <div class="card-footer">
+        <button>Add to Cart</button>
+    </div>
+</div>
+```
+
+**Multiple `<div>` Elements for Grid Layout:**
+```html
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h3>Column 1</h3>
+            <p>Content for first column</p>
+        </div>
+        <div class="column">
+            <h3>Column 2</h3>
+            <p>Content for second column</p>
+        </div>
+        <div class="column">
+            <h3>Column 3</h3>
+            <p>Content for third column</p>
+        </div>
+    </div>
+</div>
+```
+
+##### The `<span>` Element (Inline Container)
+
+The `<span>` element is a generic inline container used to group inline content for styling purposes. It doesn't start on a new line and only takes up as much width as necessary.
+
+**Basic `<span>` Example:**
+```html
+<p>This is a <span>simple span</span> inside a paragraph.</p>
+```
+
+**Using `<span>` for Text Styling:**
+```html
+<p>The word <span style="color: red; font-weight: bold;">important</span> is highlighted in this sentence.</p>
+
+<p>Price: <span style="font-size: 24px; color: green;">$19.99</span></p>
+
+<p>Email us at <span style="font-family: monospace; background-color: #f0f0f0;">contact@example.com</span></p>
+```
+
+**Multiple `<span>` Elements in Text:**
+```html
+<p>
+    This text contains <span style="color: blue;">blue text</span>,
+    <span style="color: red;">red text</span>, and
+    <span style="background-color: yellow;">highlighted text</span>.
+</p>
+```
+
+**Using `<span>` with Classes:**
+```html
+<style>
+    .highlight { background-color: yellow; }
+    .bold-text { font-weight: bold; }
+    .error { color: red; }
+    .success { color: green; }
+</style>
+
+<p>Status: <span class="success">Completed successfully!</span></p>
+<p>Error: <span class="error">Invalid input detected.</span></p>
+<p>Note: <span class="highlight bold-text">This is very important!</span></p>
+```
+
+**`<span>` for Icons or Special Characters:**
+```html
+<p>
+    <span style="font-size: 20px; color: gold;">★</span>
+    Premium Member
+</p>
+
+<p>
+    Temperature: <span style="color: red;">32°C</span>
+    <span style="color: blue;">↑</span>
+</p>
+```
+
+##### Difference Between `<div>` and `<span>`
+
+| Feature | `<div>` | `<span>` |
+|---------|---------|----------|
+| Type | Block-level | Inline |
+| Line Break | Starts on a new line | Does not start on a new line |
+| Width | Takes full width available | Takes only necessary width |
+| Use Case | Layout structure, grouping blocks | Styling parts of text |
+| Can Contain | Block and inline elements | Only inline elements |
+
+**Comparing `<div>` and `<span>` Side by Side:**
+```html
+<!-- Block-level div -->
+<div style="background-color: lightblue; padding: 10px;">
+    This is a div. It takes the full width.
+</div>
+<div style="background-color: lightgreen; padding: 10px;">
+    This is another div. It starts on a new line.
+</div>
+
+<!-- Inline span -->
+<p>
+    <span style="background-color: lightblue; padding: 5px;">This is a span.</span>
+    <span style="background-color: lightgreen; padding: 5px;">This is another span.</span>
+    They appear on the same line.
+</p>
+```
+
+**Practical Example - Combining `<div>` and `<span>`:**
+```html
+<div class="alert" style="background-color: #fff3cd; border: 1px solid #ffc107; padding: 15px;">
+    <span style="font-weight: bold; color: #856404;">Warning:</span>
+    <span>Please save your work before proceeding.</span>
+</div>
+
+<div class="article">
+    <h2>Article Title</h2>
+    <p>
+        Published on <span class="date" style="font-style: italic;">January 15, 2024</span>
+        by <span class="author" style="font-weight: bold;">John Doe</span>
+    </p>
+    <p>Article content goes here...</p>
+</div>
+```
+
 ## 🎯 Mini Task 1: HTML Basics Practice
 
 **Task:** Create a simple HTML page about yourself with the following requirements:
@@ -521,9 +709,15 @@ Tables can contain:
 
 #### Spanning Multiple Rows or Columns
 
-##### Column Spanning
+The `colspan` and `rowspan` attributes allow table cells to span across multiple columns or rows, creating more complex table layouts.
+
+##### Column Spanning (`colspan`)
+
+The `colspan` attribute specifies how many columns a cell should span.
+
+**Basic `colspan` Example:**
 ```html
-<table>
+<table border="1" style="border-collapse: collapse;">
     <tr>
         <th colspan="2">Name</th>
         <th>Age</th>
@@ -536,9 +730,97 @@ Tables can contain:
 </table>
 ```
 
-##### Row Spanning
+**`colspan` for Table Headers:**
 ```html
-<table>
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <tr>
+        <th colspan="3">Student Information</th>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <th>Roll Number</th>
+        <th>Grade</th>
+    </tr>
+    <tr>
+        <td>John Doe</td>
+        <td>101</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>Jane Smith</td>
+        <td>102</td>
+        <td>B+</td>
+    </tr>
+</table>
+```
+
+**Complex `colspan` Example - Timetable:**
+```html
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <tr>
+        <th>Day</th>
+        <th>9:00-10:00</th>
+        <th>10:00-11:00</th>
+        <th>11:00-12:00</th>
+        <th>12:00-1:00</th>
+    </tr>
+    <tr>
+        <td>Monday</td>
+        <td>Math</td>
+        <td>English</td>
+        <td colspan="2" style="text-align: center; background-color: #f0f0f0;">Lunch Break</td>
+    </tr>
+    <tr>
+        <td>Tuesday</td>
+        <td colspan="2" style="text-align: center; background-color: #e8f4f8;">Lab Session</td>
+        <td>Science</td>
+        <td>History</td>
+    </tr>
+    <tr>
+        <td>Wednesday</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>Biology</td>
+        <td>Sports</td>
+    </tr>
+</table>
+```
+
+**Invoice Table with `colspan`:**
+```html
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <tr style="background-color: #333; color: white;">
+        <th colspan="3">Invoice #12345</th>
+    </tr>
+    <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>Product A</td>
+        <td>2</td>
+        <td>$20</td>
+    </tr>
+    <tr>
+        <td>Product B</td>
+        <td>1</td>
+        <td>$15</td>
+    </tr>
+    <tr style="background-color: #f9f9f9;">
+        <td colspan="2" style="text-align: right; font-weight: bold;">Total:</td>
+        <td style="font-weight: bold;">$55</td>
+    </tr>
+</table>
+```
+
+##### Row Spanning (`rowspan`)
+
+The `rowspan` attribute specifies how many rows a cell should span.
+
+**Basic `rowspan` Example:**
+```html
+<table border="1" style="border-collapse: collapse;">
     <tr>
         <th>Name</th>
         <td>John</td>
@@ -549,6 +831,173 @@ Tables can contain:
     </tr>
     <tr>
         <td>555-5678</td>
+    </tr>
+</table>
+```
+
+**`rowspan` for Contact Information:**
+```html
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <tr>
+        <th rowspan="3" style="vertical-align: middle; background-color: #e8f4f8;">Contact Details</th>
+        <th>Email</th>
+        <td>john@example.com</td>
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <td>555-1234</td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td>123 Main Street, City</td>
+    </tr>
+</table>
+```
+
+**Employee Table with `rowspan`:**
+```html
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <tr>
+        <th>Department</th>
+        <th>Employee Name</th>
+        <th>Position</th>
+    </tr>
+    <tr>
+        <td rowspan="3" style="vertical-align: middle; background-color: #fff3cd;">IT Department</td>
+        <td>John Doe</td>
+        <td>Manager</td>
+    </tr>
+    <tr>
+        <td>Jane Smith</td>
+        <td>Developer</td>
+    </tr>
+    <tr>
+        <td>Bob Johnson</td>
+        <td>Designer</td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="vertical-align: middle; background-color: #d4edda;">HR Department</td>
+        <td>Alice Brown</td>
+        <td>HR Manager</td>
+    </tr>
+    <tr>
+        <td>Charlie Wilson</td>
+        <td>Recruiter</td>
+    </tr>
+</table>
+```
+
+##### Combining `colspan` and `rowspan`
+
+You can use both attributes together to create complex table structures.
+
+**Simple Combined Example:**
+```html
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <tr>
+        <th colspan="3" style="text-align: center; background-color: #333; color: white;">Product Comparison</th>
+    </tr>
+    <tr>
+        <th>Feature</th>
+        <th>Basic Plan</th>
+        <th>Premium Plan</th>
+    </tr>
+    <tr>
+        <td rowspan="2" style="vertical-align: middle; background-color: #f0f0f0;">Storage</td>
+        <td>10 GB</td>
+        <td>100 GB</td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center; background-color: #fff3cd;">Cloud Backup Included</td>
+    </tr>
+    <tr>
+        <td>Support</td>
+        <td>Email</td>
+        <td>24/7 Phone + Email</td>
+    </tr>
+</table>
+```
+
+**Advanced Combined Example - Course Schedule:**
+```html
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
+    <tr style="background-color: #333; color: white;">
+        <th colspan="5">Weekly Course Schedule</th>
+    </tr>
+    <tr style="background-color: #f0f0f0;">
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+    </tr>
+    <tr>
+        <td>9:00-10:00</td>
+        <td rowspan="2" style="vertical-align: middle; background-color: #e8f4f8;">Mathematics<br>(Room 101)</td>
+        <td>English</td>
+        <td>Science</td>
+        <td>History</td>
+    </tr>
+    <tr>
+        <td>10:00-11:00</td>
+        <td>Physics</td>
+        <td rowspan="2" style="vertical-align: middle; background-color: #fff3cd;">Computer Lab<br>(Lab 1)</td>
+        <td>Chemistry</td>
+    </tr>
+    <tr>
+        <td>11:00-12:00</td>
+        <td>Biology</td>
+        <td>Geography</td>
+        <td>Physical Ed</td>
+    </tr>
+    <tr>
+        <td>12:00-1:00</td>
+        <td colspan="4" style="background-color: #d4edda;">Lunch Break</td>
+    </tr>
+    <tr>
+        <td>1:00-2:00</td>
+        <td colspan="2" style="background-color: #f8d7da;">Sports Activities</td>
+        <td>Art</td>
+        <td>Music</td>
+    </tr>
+</table>
+```
+
+**Complex Example - Project Timeline:**
+```html
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <tr style="background-color: #333; color: white;">
+        <th colspan="4">Project Timeline - Q1 2024</th>
+    </tr>
+    <tr style="background-color: #f0f0f0;">
+        <th>Phase</th>
+        <th>January</th>
+        <th>February</th>
+        <th>March</th>
+    </tr>
+    <tr>
+        <td rowspan="2" style="vertical-align: middle; background-color: #e8f4f8; font-weight: bold;">Planning</td>
+        <td>Requirements</td>
+        <td colspan="2" style="text-align: center; background-color: #fff3cd;">Design & Prototyping</td>
+    </tr>
+    <tr>
+        <td>Research</td>
+        <td>Finalize Specs</td>
+        <td>Review</td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="vertical-align: middle; background-color: #d4edda; font-weight: bold;">Development</td>
+        <td colspan="3" style="text-align: center;">Backend Development</td>
+    </tr>
+    <tr>
+        <td>-</td>
+        <td colspan="2" style="text-align: center;">Frontend Development</td>
+    </tr>
+    <tr>
+        <td style="background-color: #f8d7da; font-weight: bold;">Testing</td>
+        <td>-</td>
+        <td>-</td>
+        <td>QA Testing</td>
     </tr>
 </table>
 ```
@@ -582,18 +1031,842 @@ Tables can contain:
 </table>
 ```
 
-#### Tables as a Design Tool
+#### Web Page Structure Using Tables
 
-While tables were historically used for layout, modern web design uses CSS for layout instead. Tables should only be used for tabular data. However, understanding table structure is important:
+While tables were historically used for layout, modern web design uses CSS and `<div>` elements for layout instead. Tables should only be used for tabular data. However, understanding table-based layouts is important for maintaining legacy code and understanding web design history.
 
+**Basic Two-Column Layout Using Tables:**
 ```html
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-        <td width="25%">Navigation</td>
-        <td width="75%">Content</td>
-    </tr>
-</table>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table-Based Layout</title>
+</head>
+<body>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td width="25%" style="background-color: #f0f0f0; padding: 10px; vertical-align: top;">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </td>
+            <td width="75%" style="padding: 10px; vertical-align: top;">
+                <h1>Welcome to My Website</h1>
+                <p>This is the main content area.</p>
+                <p>Content goes here...</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
 ```
+
+**Complete Web Page Layout Using Tables:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Table Layout</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        table { border-collapse: collapse; }
+    </style>
+</head>
+<body>
+    <!-- Main Container Table -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!-- Header Row -->
+        <tr>
+            <td colspan="3" style="background-color: #333; color: white; padding: 20px;">
+                <h1 style="margin: 0;">My Website</h1>
+                <p style="margin: 5px 0 0 0;">Welcome to our site</p>
+            </td>
+        </tr>
+
+        <!-- Navigation Row -->
+        <tr>
+            <td colspan="3" style="background-color: #666; padding: 10px;">
+                <a href="#home" style="color: white; margin-right: 15px; text-decoration: none;">Home</a>
+                <a href="#about" style="color: white; margin-right: 15px; text-decoration: none;">About</a>
+                <a href="#services" style="color: white; margin-right: 15px; text-decoration: none;">Services</a>
+                <a href="#contact" style="color: white; text-decoration: none;">Contact</a>
+            </td>
+        </tr>
+
+        <!-- Content Row with 3 columns -->
+        <tr>
+            <!-- Left Sidebar -->
+            <td width="20%" style="background-color: #f5f5f5; padding: 15px; vertical-align: top;">
+                <h3>Sidebar</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="#link1">Link 1</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#link2">Link 2</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#link3">Link 3</a></li>
+                </ul>
+            </td>
+
+            <!-- Main Content -->
+            <td width="60%" style="padding: 15px; vertical-align: top;">
+                <h2>Main Content Area</h2>
+                <p>This is the main content section where your primary information goes.</p>
+                <p>You can add multiple paragraphs, images, and other content here.</p>
+
+                <!-- Nested Table for Sub-content -->
+                <table width="100%" border="1" style="border-collapse: collapse; margin-top: 20px;">
+                    <tr style="background-color: #e0e0e0;">
+                        <th style="padding: 10px;">Feature</th>
+                        <th style="padding: 10px;">Description</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Feature 1</td>
+                        <td style="padding: 10px;">Description of feature 1</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Feature 2</td>
+                        <td style="padding: 10px;">Description of feature 2</td>
+                    </tr>
+                </table>
+            </td>
+
+            <!-- Right Sidebar -->
+            <td width="20%" style="background-color: #f5f5f5; padding: 15px; vertical-align: top;">
+                <h3>News</h3>
+                <div style="background-color: white; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd;">
+                    <h4 style="margin: 0 0 5px 0;">Update 1</h4>
+                    <p style="margin: 0; font-size: 12px;">Latest news item...</p>
+                </div>
+                <div style="background-color: white; padding: 10px; border: 1px solid #ddd;">
+                    <h4 style="margin: 0 0 5px 0;">Update 2</h4>
+                    <p style="margin: 0; font-size: 12px;">Another news item...</p>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Footer Row -->
+        <tr>
+            <td colspan="3" style="background-color: #333; color: white; padding: 15px; text-align: center;">
+                <p style="margin: 0;">&copy; 2024 My Website. All rights reserved.</p>
+                <p style="margin: 5px 0 0 0; font-size: 12px;">
+                    <a href="#privacy" style="color: #ccc; margin-right: 10px;">Privacy Policy</a>
+                    <a href="#terms" style="color: #ccc;">Terms of Service</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+```
+
+**Table-Based E-commerce Product Layout:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Page - Table Layout</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!-- Header -->
+        <tr>
+            <td colspan="2" style="background-color: #4CAF50; color: white; padding: 20px;">
+                <h1 style="margin: 0;">Online Store</h1>
+            </td>
+        </tr>
+
+        <!-- Main Content Area -->
+        <tr>
+            <td width="70%" style="padding: 20px; vertical-align: top;">
+                <h2>Product Name</h2>
+
+                <!-- Product Details Table -->
+                <table width="100%" border="0" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td width="40%" style="vertical-align: top;">
+                            <div style="background-color: #f0f0f0; padding: 20px; text-align: center; border: 1px solid #ddd;">
+                                [Product Image Here]
+                                <br>400 x 400 px
+                            </div>
+                        </td>
+                        <td width="60%" style="vertical-align: top; padding-left: 20px;">
+                            <h3>Product Details</h3>
+                            <p><strong>Price:</strong> <span style="color: #4CAF50; font-size: 24px;">$29.99</span></p>
+                            <p><strong>Availability:</strong> In Stock</p>
+                            <p><strong>Description:</strong><br>
+                            This is a detailed description of the product. It includes all the important features and benefits that customers need to know.</p>
+                            <button style="background-color: #4CAF50; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px;">
+                                Add to Cart
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Product Specifications -->
+                <h3 style="margin-top: 30px;">Specifications</h3>
+                <table width="100%" border="1" style="border-collapse: collapse;">
+                    <tr style="background-color: #f0f0f0;">
+                        <th style="padding: 10px; text-align: left;">Specification</th>
+                        <th style="padding: 10px; text-align: left;">Details</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Brand</td>
+                        <td style="padding: 10px;">Sample Brand</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Model</td>
+                        <td style="padding: 10px;">XYZ-123</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Weight</td>
+                        <td style="padding: 10px;">2.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Dimensions</td>
+                        <td style="padding: 10px;">30 x 20 x 10 cm</td>
+                    </tr>
+                </table>
+            </td>
+
+            <!-- Shopping Cart Sidebar -->
+            <td width="30%" style="background-color: #f9f9f9; padding: 20px; vertical-align: top;">
+                <h3>Your Cart</h3>
+                <table width="100%" border="0" cellpadding="5" cellspacing="0" style="background-color: white; border: 1px solid #ddd;">
+                    <tr style="background-color: #f0f0f0;">
+                        <td colspan="2" style="padding: 10px;"><strong>Cart Items</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Item 1</td>
+                        <td style="padding: 10px; text-align: right;">$15.00</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Item 2</td>
+                        <td style="padding: 10px; text-align: right;">$20.00</td>
+                    </tr>
+                    <tr style="background-color: #f0f0f0;">
+                        <td style="padding: 10px;"><strong>Total</strong></td>
+                        <td style="padding: 10px; text-align: right;"><strong>$35.00</strong></td>
+                    </tr>
+                </table>
+
+                <h3 style="margin-top: 30px;">Related Products</h3>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="background-color: white; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;">
+                            <strong>Product 1</strong><br>
+                            <span style="color: #4CAF50;">$19.99</span>
+                        </td>
+                    </tr>
+                    <tr><td style="height: 10px;"></td></tr>
+                    <tr>
+                        <td style="background-color: white; border: 1px solid #ddd; padding: 10px;">
+                            <strong>Product 2</strong><br>
+                            <span style="color: #4CAF50;">$24.99</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td colspan="2" style="background-color: #333; color: white; padding: 20px; text-align: center;">
+                <p style="margin: 0;">&copy; 2024 Online Store. All rights reserved.</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+```
+
+#### Web Page Structure Using Div Elements
+
+Modern web development uses `<div>` elements with CSS for layout. This approach is more flexible, maintainable, and semantically correct than table-based layouts.
+
+**Basic Two-Column Layout Using Divs:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Div-Based Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 25%;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .main-content {
+            width: 75%;
+            padding: 20px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>Welcome to My Website</h1>
+            <p>This is the main content area.</p>
+            <p>Content goes here...</p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+**Complete Web Page Layout Using Divs:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modern Div Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin-bottom: 5px;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: #666;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .navbar a:hover {
+            color: #ddd;
+        }
+
+        /* Main Container with 3 columns */
+        .main-container {
+            display: flex;
+            min-height: 500px;
+        }
+
+        /* Left Sidebar */
+        .sidebar-left {
+            width: 20%;
+            background-color: #f5f5f5;
+            padding: 15px;
+        }
+
+        .sidebar-left h3 {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-left ul {
+            list-style-type: none;
+        }
+
+        .sidebar-left li {
+            margin-bottom: 10px;
+        }
+
+        /* Main Content */
+        .content {
+            width: 60%;
+            padding: 20px;
+        }
+
+        .content h2 {
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .feature-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        .feature-box h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Right Sidebar */
+        .sidebar-right {
+            width: 20%;
+            background-color: #f5f5f5;
+            padding: 15px;
+        }
+
+        .news-item {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .news-item h4 {
+            margin-bottom: 5px;
+        }
+
+        .news-item p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        .footer a {
+            color: #ccc;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>My Website</h1>
+        <p>Welcome to our site</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar-left">
+            <h3>Sidebar</h3>
+            <ul>
+                <li><a href="#link1">Link 1</a></li>
+                <li><a href="#link2">Link 2</a></li>
+                <li><a href="#link3">Link 3</a></li>
+                <li><a href="#link4">Link 4</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <h2>Main Content Area</h2>
+            <p>This is the main content section where your primary information goes.</p>
+            <p>You can add multiple paragraphs, images, and other content here.</p>
+
+            <div class="feature-box">
+                <h3>Featured Content</h3>
+                <p>This is a featured content section that stands out from the rest of the page.</p>
+                <p>You can use this for important announcements, promotions, or highlighted information.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Another Section</h3>
+                <p>Additional content can be organized in separate boxes like this.</p>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar-right">
+            <h3>News</h3>
+            <div class="news-item">
+                <h4>Update 1</h4>
+                <p>Latest news item goes here...</p>
+            </div>
+            <div class="news-item">
+                <h4>Update 2</h4>
+                <p>Another news item goes here...</p>
+            </div>
+            <div class="news-item">
+                <h4>Update 3</h4>
+                <p>More news content here...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <p>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </p>
+    </div>
+</body>
+</html>
+```
+
+**Responsive Div-Based Layout (Mobile-Friendly):**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 25%;
+            padding: 15px;
+        }
+
+        .column.main {
+            flex: 50%;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive layout - makes the columns stack on top of each other on small screens */
+        @media screen and (max-width: 768px) {
+            .column {
+                flex: 100%;
+            }
+
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Responsive Website</h1>
+        <p>Resize the browser window to see the effect</p>
+    </div>
+
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h2>Sidebar</h2>
+                <p>This is the sidebar content. It will stack on mobile devices.</p>
+            </div>
+        </div>
+
+        <div class="column main">
+            <div class="card">
+                <h2>Main Content</h2>
+                <p>This is the main content area. It takes up more space on larger screens.</p>
+                <p>The layout automatically adjusts based on screen size.</p>
+            </div>
+
+            <div class="card">
+                <h2>Another Section</h2>
+                <p>Additional content goes here.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h2>Right Column</h2>
+                <p>This is the right column content.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Responsive Website</p>
+    </div>
+</body>
+</html>
+```
+
+**Div-Based Grid Layout (Modern Approach):**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Grid Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "nav nav nav"
+                "sidebar main aside"
+                "footer footer footer";
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: auto auto 1fr auto;
+            min-height: 100vh;
+            gap: 0;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .navbar {
+            grid-area: nav;
+            background-color: #666;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .main-content {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        .aside {
+            grid-area: aside;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        /* Responsive: Stack on small screens */
+        @media screen and (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "aside"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CSS Grid Layout</h1>
+            <p>Modern web page structure using CSS Grid</p>
+        </div>
+
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <div class="content-box">
+                <h4>Category 1</h4>
+                <ul>
+                    <li><a href="#item1">Item 1</a></li>
+                    <li><a href="#item2">Item 2</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h2>Main Content</h2>
+            <div class="content-box">
+                <h3>Article Title</h3>
+                <p>This is the main content area using CSS Grid layout.</p>
+                <p>Grid layout provides a powerful way to create complex layouts with clean code.</p>
+            </div>
+
+            <div class="content-box">
+                <h3>Another Article</h3>
+                <p>More content goes here.</p>
+            </div>
+        </div>
+
+        <div class="aside">
+            <h3>Sidebar</h3>
+            <div class="content-box">
+                <h4>Quick Links</h4>
+                <p>Important links and information</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 CSS Grid Layout Example</p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+**Comparison: Tables vs. Divs for Layout**
+
+| Aspect | Table Layout | Div Layout |
+|--------|-------------|------------|
+| Semantic HTML | ❌ Not semantic (tables are for data) | ✅ Semantic and meaningful |
+| Flexibility | ❌ Rigid structure | ✅ Highly flexible |
+| Responsiveness | ❌ Difficult to make responsive | ✅ Easy to make responsive |
+| Maintenance | ❌ Harder to maintain | ✅ Easier to maintain |
+| Accessibility | ❌ Poor accessibility | ✅ Better accessibility |
+| Modern Standard | ❌ Deprecated for layout | ✅ Current best practice |
+| CSS Support | ❌ Limited styling options | ✅ Full CSS capabilities |
+| Load Time | ❌ Can be slower | ✅ Generally faster |
+
+**Best Practices:**
+- Use `<table>` only for tabular data (actual data tables, spreadsheets, etc.)
+- Use `<div>` elements with CSS (Flexbox, Grid) for page layout
+- Always consider mobile responsiveness
+- Use semantic HTML5 elements (`<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>`) instead of generic divs when possible
 
 ## 🎯 Mini Task 5: Creating Data Tables
 
