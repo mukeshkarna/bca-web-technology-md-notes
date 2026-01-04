@@ -818,7 +818,7 @@
 
 ---
 
-## Level 7: Advanced CRUD Projects (Week 13-15)
+## Level 7: Advanced CRUD Projects
 
 ### Project 1: Library Management System
 
